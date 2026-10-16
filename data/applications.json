@@ -1,0 +1,119 @@
+[
+  {
+    "id": "somnath-sumbe",
+    "name": "Somnath Sumbe",
+    "description": "Personal website and portfolio.",
+    "category": "Personal",
+    "url": "https://somnathsumbe.github.io/",
+    "icon": "bi-person-badge",
+    "color": "tint-mint"
+  },
+  {
+    "id": "personal-ledger",
+    "name": "Personal Ledger",
+    "description": "Open the Personal Ledger application.",
+    "category": "Finance",
+    "url": "https://somnathsumbe.github.io/-PersonalLedger/",
+    "icon": "bi-wallet2",
+    "color": "tint-blue"
+  },
+  {
+    "id": "astro",
+    "name": "Astro",
+    "description": "Open the Astro application.",
+    "category": "Utilities",
+    "url": "https://somnathsumbe.github.io/Astro/",
+    "icon": "bi-stars",
+    "color": "tint-blue"
+  },
+  {
+    "id": "marathi-14-khadi",
+    "name": "Marathi 14 Khadi",
+    "description": "Open the Marathi 14 Khadi application.",
+    "category": "Education",
+    "url": "https://somnathsumbe.github.io/Marathi14Khadi/",
+    "icon": "bi-book",
+    "color": "tint-violet"
+  },
+  {
+    "id": "shreedha-enterprises",
+    "name": "Shreedha Enterprises",
+    "description": "Open the Shreedha Enterprises website.",
+    "category": "Business",
+    "url": "https://somnathsumbe.github.io/shreedhaenterprises/",
+    "icon": "bi-building",
+    "color": "tint-amber"
+  },
+  {
+    "id": "trench-coder",
+    "name": "Trench Coder",
+    "description": "Open the Trench Coder application.",
+    "category": "Utilities",
+    "url": "https://somnathsumbe.github.io/trenchcoder/",
+    "icon": "bi-code-slash",
+    "color": "tint-lilac"
+  },
+  {
+    "id": "my-grocery-list",
+    "name": "My Grocery List",
+    "description": "Open the My Grocery List application.",
+    "category": "Productivity",
+    "url": "https://somnathsumbe.github.io/MyGroceryList/",
+    "icon": "bi-basket",
+    "color": "tint-sky"
+  },
+  {
+    "id": "marathi-kids-stories",
+    "name": "Marathi Kids Stories",
+    "description": "Open the Marathi Kids Stories application.",
+    "category": "Education",
+    "url": "https://somnathsumbe.github.io/MarathiKidsStories/",
+    "icon": "bi-book-half",
+    "color": "tint-rose"
+  },
+  {
+    "id": "chess-log",
+    "name": "Chess Log",
+    "description": "Open the Chess Log application.",
+    "category": "Productivity",
+    "url": "https://somnathsumbe.github.io/ChessLog/",
+    "icon": "bi-trophy",
+    "color": "tint-teal"
+  },
+  {
+    "id": "interview-prep-app",
+    "name": "Interview Prep App",
+    "description": "Open the Interview Prep App.",
+    "category": "Development",
+    "url": "https://somnathsumbe.github.io/InterviewPrepApp/",
+    "icon": "bi-person-workspace",
+    "color": "tint-mint"
+  },
+  {
+    "id": "smart-revision-app",
+    "name": "Smart Revision App",
+    "description": "Open the Smart Revision App.",
+    "category": "Education",
+    "url": "https://somnathsumbe.github.io/smartrevisionapp/",
+    "icon": "bi-mortarboard",
+    "color": "tint-blue"
+  },
+  {
+    "id": "astro-next-level",
+    "name": "Astro Next Level",
+    "description": "Open the Astro Next Level dashboard.",
+    "category": "Utilities",
+    "url": "https://somnathsumbe.github.io/AstroNextLevel/dashboard/",
+    "icon": "bi-stars",
+    "color": "tint-violet"
+  },
+  {
+    "id": "next-medi-stores-2026",
+    "name": "Next Medi Stores 2026",
+    "description": "Open Next Medi Stores 2026.",
+    "category": "Business",
+    "url": "https://somnathsumbe.github.io/NextMediStores2026/login",
+    "icon": "bi-hospital",
+    "color": "tint-amber"
+  }
+]
