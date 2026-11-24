@@ -2,13 +2,12 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const owner = process.env.GITHUB_OWNER || "somnathsumbe";
 const token = process.env.GITHUB_TOKEN;
-const dataDirectory = new URL("../data/", import.meta.url);
 const applicationsPath = new URL("../data/applications.json", import.meta.url);
 const statusPath = new URL("../data/repository-sync-status.json", import.meta.url);
 const startedAt = new Date().toISOString();
 
 async function writeStatus(status) {
-  await writeFile(statusPath, `${JSON.stringify(status, null, 2)}\\n`);
+  await writeFile(statusPath, `${JSON.stringify(status, null, 2)}\n`);
 }
 
 async function fetchOwnedPublicRepositories() {
@@ -51,7 +50,7 @@ function defaultsFor(name) {
 }
 
 function toId(name) {
-  return name.normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "")
+  return name.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
     .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
@@ -61,14 +60,14 @@ async function runSync() {
   if (!Array.isArray(existing)) throw new TypeError("data/applications.json must contain a JSON array.");
 
   const byRepository = new Map(existing.filter((app) => app.repositoryUrl)
-    .map((app) => [app.repositoryUrl.replace(/\\.git$/, "").toLowerCase(), app]));
+    .map((app) => [app.repositoryUrl.replace(/\.git$/, "").toLowerCase(), app]));
   const seenIds = new Set(existing.map((app) => app.id));
   const repositories = await fetchOwnedPublicRepositories();
   let addedCount = 0;
   let updatedCount = 0;
 
   for (const repo of repositories) {
-    const repositoryUrl = repo.html_url.replace(/\\.git$/, "");
+    const repositoryUrl = repo.html_url.replace(/\.git$/, "");
     const key = repositoryUrl.toLowerCase();
     const current = byRepository.get(key);
     const metadata = {
@@ -110,7 +109,7 @@ async function runSync() {
     addedCount += 1;
   }
 
-  await writeFile(applicationsPath, `${JSON.stringify(existing, null, 2)}\\n`);
+  await writeFile(applicationsPath, `${JSON.stringify(existing, null, 2)}\n`);
   const completedAt = new Date().toISOString();
   const status = {
     status: "success",
