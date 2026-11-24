@@ -27,21 +27,27 @@ jobs:
         with:
           node-version: 22
 
-      - name: Sync public repositories
+      - name: Sync repositories and record status
+        id: sync
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_OWNER: somnathsumbe
         run: node scripts/sync-repositories.mjs
 
-      - name: Commit and push changes
+      - name: Commit dashboard data and sync status
+        if: always()
         run: |
-          if git diff --quiet -- data/applications.json; then
-            echo "Repository list is already up to date."
-            exit 0
+          if git diff --quiet -- data/applications.json data/repository-sync-status.json; then
+            echo "No dashboard data or sync status changes."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/applications.json data/repository-sync-status.json
+            git commit -m "chore: update repository sync status"
+            git push origin HEAD:main
           fi
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/applications.json
-          git commit -m "chore: sync GitHub repositories"
-          git push origin HEAD:main
+      - name: Mark workflow failed when sync failed
+        if: steps.sync.outcome == 'failure'
+        run: exit 1
