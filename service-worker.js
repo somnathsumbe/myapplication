@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "my-hub-v3";
+const CACHE_VERSION = "my-hub-v4";
 const APP_CACHE = `${CACHE_VERSION}-app`;
 const APP_SHELL = [
   "./",

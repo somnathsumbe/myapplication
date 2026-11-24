@@ -78,6 +78,8 @@ h1 { margin: 0; color: var(--text); font-size: clamp(28px, 3vw, 36px); font-weig
 .apps-section { margin-bottom: 36px; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
 .section-heading h2 { margin: 0; color: #202a3d; font-size: 18px; font-weight: 750; letter-spacing: -.45px; }
+.app-count { display: inline-block; margin-left: 7px; padding: 4px 8px; border-radius: 999px; background: #efeeff; color: #5148d9; font-size: 10px; font-weight: 750; letter-spacing: 0; vertical-align: middle; }
+.dark-mode .app-count { background: #302c68; color: #c0bbff; }
 .apps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
 .app-card { display: flex; min-width: 0; flex-direction: column; padding: 19px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
 .app-card:hover { transform: translateY(-3px); border-color: #d4d1ff; box-shadow: 0 14px 34px rgba(33, 42, 75, .09); }
@@ -100,6 +102,10 @@ h1 { margin: 0; color: var(--text); font-size: clamp(28px, 3vw, 36px); font-weig
 .launch-button { border: 1px solid transparent; background: #f0efff; color: #5148d9; transition: background .18s, color .18s, transform .18s; }
 .launch-button:hover { transform: translateY(-1px); background: var(--primary); color: #fff; }
 .copy-link-button { border: 1px solid var(--border); background: var(--surface); color: #58647a; transition: border-color .18s, background .18s, color .18s; }
+.repository-link { display: inline-flex; align-items: center; gap: 4px; color: #667085; font-size: 10px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.repository-link svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.repository-link:hover { color: var(--primary); text-decoration: underline; }
+.app-card-footer { flex-wrap: wrap; }
 .copy-link-button:hover { border-color: #c8c4ff; background: #f7f6ff; color: var(--primary); }
 .app-status { margin: 14px 0 0; color: #0d766d; font-size: 12px; }
 .app-status:empty { display: none; }
