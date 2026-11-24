@@ -60,22 +60,35 @@
       const repositoryUrl = validUrl(app.repositoryUrl) || (app.linkType === "repository" ? validUrl(app.url) : null);
       const primaryUrl = appUrl || repositoryUrl;
       if (!primaryUrl || !app.name) return "";
+
       const color = /^tint-[a-z]+$/.test(app.color || "") ? app.color : "tint-lilac";
-      const primaryLabel = appUrl ? (app.linkType === "repository" ? "Open GitHub Pages" : "Open application") : "Open GitHub repository";
-      const copyLabel = appUrl ? (app.linkType === "repository" ? "Copy website link" : "Copy app link") : "Copy repository link";
-      const repositoryLink = appUrl && repositoryUrl
+      const websiteAvailable = Boolean(appUrl);
+      const statusBadge = websiteAvailable
+        ? '<span class="link-status-badge is-available">Website उपलब्ध</span>'
+        : '<span class="link-status-badge is-unavailable">Website लिंक उपलब्ध नाही</span>';
+      const primaryAction = websiteAvailable
+        ? `<a class="launch-button" href="${escapeHtml(appUrl)}" target="_blank" rel="noopener noreferrer">Open website ${svgIcon("bi-arrow-up-right")}</a>`
+        : '<span class="launch-button is-disabled" aria-disabled="true">Website link unavailable</span>';
+      const repositoryLink = repositoryUrl
         ? `<a class="repository-link" href="${escapeHtml(repositoryUrl)}" target="_blank" rel="noopener noreferrer">GitHub repository ${svgIcon("bi-arrow-up-right")}</a>`
         : "";
-      return `<article class="app-card">
+      const copyUrl = websiteAvailable ? appUrl : repositoryUrl;
+      const copyLabel = websiteAvailable ? "Copy website link" : "Copy repository link";
+      const copyAction = copyUrl
+        ? `<button class="copy-link-button" type="button" data-copy-link="${escapeHtml(copyUrl)}" aria-label="Copy ${escapeHtml(app.name)} link">${svgIcon("bi-copy")}<span>${copyLabel}</span></button>`
+        : "";
+
+      return `<article class="app-card ${websiteAvailable ? "has-website" : "no-website"}">
         <div class="app-card-top">
           <span class="app-icon ${color}">${svgIcon(app.icon)}</span>
+          ${statusBadge}
         </div>
         <h3 class="app-name">${escapeHtml(app.name)}</h3>
         <p class="app-description">${escapeHtml(app.description || "")}</p>
         <div class="app-card-footer">
-          <a class="launch-button" href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">${primaryLabel} ${svgIcon("bi-arrow-up-right")}</a>
+          ${primaryAction}
           ${repositoryLink}
-          <button class="copy-link-button" type="button" data-copy-link="${escapeHtml(primaryUrl)}" aria-label="Copy ${escapeHtml(app.name)} link">${svgIcon("bi-copy")}<span>${copyLabel}</span></button>
+          ${copyAction}
         </div>
       </article>`;
     }).join("");
