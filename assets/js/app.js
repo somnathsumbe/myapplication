@@ -103,6 +103,59 @@
     }
   }
 
+  function formatSyncDate(value) {
+    if (!value) return "Not run yet";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "Unknown";
+    return new Intl.DateTimeFormat("en-IN", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "Asia/Kolkata"
+    }).format(date) + " IST";
+  }
+
+  async function loadSyncStatus() {
+    const badge = $("#syncStatusBadge");
+    const lastRun = $("#syncLastRun");
+    const added = $("#syncAddedCount");
+    const updated = $("#syncUpdatedCount");
+    const total = $("#syncTotalCount");
+    const message = $("#syncMessage");
+    if (!badge || !lastRun || !added || !updated || !total || !message) return;
+
+    try {
+      const response = await fetch("data/repository-sync-status.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`Sync status request failed (${response.status}).`);
+      const status = await response.json();
+      lastRun.textContent = formatSyncDate(status.lastSuccessfulRunAt);
+      added.textContent = Number.isInteger(status.addedCount) ? status.addedCount : "—";
+      updated.textContent = Number.isInteger(status.updatedCount) ? status.updatedCount : "—";
+      total.textContent = Number.isInteger(status.totalRepositories) ? status.totalRepositories : "—";
+
+      badge.className = "sync-status-pill";
+      if (status.status === "success") {
+        badge.classList.add("is-success");
+        badge.textContent = "Sync successful";
+        message.textContent = `Last run completed at ${formatSyncDate(status.completedAt)}. ${status.addedCount || 0} added and ${status.updatedCount || 0} updated.`;
+      } else if (status.status === "failed") {
+        badge.classList.add("is-error");
+        badge.textContent = "Last sync failed";
+        message.textContent = status.error
+          ? `Sync failed: ${status.error}`
+          : "The latest repository sync failed. Open workflow runs for details.";
+      } else {
+        badge.classList.add("is-pending");
+        badge.textContent = "Not synced yet";
+        message.textContent = "The first scheduled or manual repository sync has not completed yet.";
+      }
+    } catch (error) {
+      badge.className = "sync-status-pill is-error";
+      badge.textContent = "Status unavailable";
+      message.textContent = "Could not load sync status. Check GitHub Actions for the latest run.";
+      console.error("Unable to load repository sync status.", error);
+    }
+  }
+
   async function loadApplications() {
     try {
       const response = await fetch("data/applications.json", { cache: "no-cache" });
@@ -197,6 +250,7 @@
     });
 
     loadApplications();
+    loadSyncStatus();
   }
 
   document.addEventListener("DOMContentLoaded", init);

@@ -183,3 +183,28 @@ body.dark-mode {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 :focus-visible { outline: 3px solid #a9a4ff; outline-offset: 3px; }
+
+
+/* Repository sync status */
+.sync-panel { margin: 0 0 34px; padding: 21px 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+.sync-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.sync-eyebrow { margin-bottom: 5px; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: 1.35px; }
+.sync-panel h2 { margin: 0; color: var(--text); font-size: 17px; font-weight: 750; letter-spacing: -.35px; }
+.sync-status-pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; border-radius: 999px; font-size: 10px; font-weight: 750; white-space: nowrap; }
+.sync-status-pill::before { width: 7px; height: 7px; border-radius: 50%; background: currentColor; content: ""; }
+.sync-status-pill.is-success { background: #e5f8ef; color: #087443; }
+.sync-status-pill.is-error { background: #fff0f1; color: #b4233c; }
+.sync-status-pill.is-pending { background: #f1f2f6; color: #667085; }
+.sync-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.sync-metric { display: flex; min-width: 0; flex-direction: column; gap: 7px; padding: 13px 14px; border: 1px solid var(--border); border-radius: 11px; background: var(--canvas); }
+.sync-metric span { color: var(--muted); font-size: 10px; line-height: 1.4; }
+.sync-metric strong { overflow-wrap: anywhere; color: var(--text); font-size: 16px; font-weight: 750; }
+.sync-metric:first-child strong { font-size: 12px; line-height: 1.5; }
+.sync-message { margin: 14px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+.sync-action { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; color: var(--primary); font-size: 11px; font-weight: 750; text-decoration: none; }
+.sync-action:hover { text-decoration: underline; }
+.dark-mode .sync-status-pill.is-success { background: #123b30; color: #6ee7b7; }
+.dark-mode .sync-status-pill.is-error { background: #4a252e; color: #fda4af; }
+.dark-mode .sync-status-pill.is-pending { background: #2b3547; color: #c1cada; }
+@media (max-width: 700px) { .sync-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .sync-panel { padding: 16px; } .sync-panel-heading { align-items: flex-start; flex-direction: column; } .sync-metrics { gap: 8px; } .sync-metric { padding: 11px; } }
