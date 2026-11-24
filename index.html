@@ -48,6 +48,23 @@
             <h1>Dashboard<span class="title-period">.</span></h1>
           </div>
         </section>
+        <section class="sync-panel" aria-labelledby="syncHeading" aria-live="polite">
+          <div class="sync-panel-heading">
+            <div>
+              <div class="sync-eyebrow">GITHUB AUTOMATION</div>
+              <h2 id="syncHeading">Repository Sync Status</h2>
+            </div>
+            <span class="sync-status-pill is-pending" id="syncStatusBadge">Checking status</span>
+          </div>
+          <div class="sync-metrics">
+            <div class="sync-metric"><span>Last successful sync</span><strong id="syncLastRun">Not run yet</strong></div>
+            <div class="sync-metric"><span>New repositories</span><strong id="syncAddedCount">—</strong></div>
+            <div class="sync-metric"><span>Repositories updated</span><strong id="syncUpdatedCount">—</strong></div>
+            <div class="sync-metric"><span>Total public repositories</span><strong id="syncTotalCount">—</strong></div>
+          </div>
+          <p class="sync-message" id="syncMessage">Waiting for the first automated sync.</p>
+          <a class="sync-action" href="https://github.com/somnathsumbe/myapplication/actions/workflows/sync-repositories.yml" target="_blank" rel="noopener noreferrer">View workflow runs <span aria-hidden="true">↗</span></a>
+        </section>
         <section class="apps-section" aria-labelledby="applicationsHeading">
           <div class="section-heading">
             <h2 id="applicationsHeading">Applications <span class="app-count" id="appCount">22 projects</span></h2>
