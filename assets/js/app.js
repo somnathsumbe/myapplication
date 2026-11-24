@@ -56,13 +56,13 @@
 
   function renderApplications(applications) {
     $("#appsGrid").innerHTML = applications.map((app) => {
-      const appUrl = app.linkType === "repository" ? null : validUrl(app.url);
+      const appUrl = app.linkType === "repository" ? validUrl(app.pagesUrl) : validUrl(app.url);
       const repositoryUrl = validUrl(app.repositoryUrl) || (app.linkType === "repository" ? validUrl(app.url) : null);
       const primaryUrl = appUrl || repositoryUrl;
       if (!primaryUrl || !app.name) return "";
       const color = /^tint-[a-z]+$/.test(app.color || "") ? app.color : "tint-lilac";
-      const primaryLabel = appUrl ? "Open application" : "Open GitHub repository";
-      const copyLabel = appUrl ? "Copy app link" : "Copy repository link";
+      const primaryLabel = appUrl ? (app.linkType === "repository" ? "Open GitHub Pages" : "Open application") : "Open GitHub repository";
+      const copyLabel = appUrl ? (app.linkType === "repository" ? "Copy website link" : "Copy app link") : "Copy repository link";
       const repositoryLink = appUrl && repositoryUrl
         ? `<a class="repository-link" href="${escapeHtml(repositoryUrl)}" target="_blank" rel="noopener noreferrer">GitHub repository ${svgIcon("bi-arrow-up-right")}</a>`
         : "";
