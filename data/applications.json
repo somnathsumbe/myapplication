@@ -194,7 +194,8 @@
     "githubUpdatedAt": "2026-09-10T11:31:37Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/AstroN/"
   },
   {
     "id": "dtracker",
@@ -209,7 +210,8 @@
     "githubUpdatedAt": "2026-09-24T08:42:26Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/dtracker/"
   },
   {
     "id": "smart-exam-practice",
@@ -224,7 +226,8 @@
     "githubUpdatedAt": "2026-09-30T11:02:19Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/SmartExamPractice/"
   },
   {
     "id": "interview-prep-studio",
@@ -239,7 +242,8 @@
     "githubUpdatedAt": "2026-10-17T13:50:07Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/InterviewPrepStudio/"
   },
   {
     "id": "gaav2ghar",
@@ -254,7 +258,8 @@
     "githubUpdatedAt": "2026-10-31T19:31:18Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/Gaav2Ghar/"
   },
   {
     "id": "akshar-mitra",
@@ -269,7 +274,8 @@
     "githubUpdatedAt": "2026-10-29T06:51:55Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/AksharMitra/"
   },
   {
     "id": "aaicha-pharal",
@@ -284,7 +290,8 @@
     "githubUpdatedAt": "2026-11-02T19:17:56Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/aaicha-pharal/"
   },
   {
     "id": "chakali-recipe-production-manager",
@@ -299,7 +306,8 @@
     "githubUpdatedAt": "2026-11-13T10:22:20Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/Chakali-Recipe-Production-Manager/"
   },
   {
     "id": "interest-calculator",
@@ -314,7 +322,8 @@
     "githubUpdatedAt": "2026-11-13T17:17:11Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/Interest-Calculator/"
   },
   {
     "id": "myapplication",
@@ -329,6 +338,7 @@
     "githubUpdatedAt": "2026-10-16T09:44:33Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "pagesUrl": "https://somnathsumbe.github.io/myapplication/"
   }
 ]
