@@ -77,13 +77,21 @@ async function runSync() {
       defaultBranch: repo.default_branch,
       stars: repo.stargazers_count,
       fork: repo.fork,
-      ...(current?.linkType === "repository" && !current.pagesUrl ? { pagesUrl } : {}),
     };
 
     if (current) {
-      const changed = Object.entries(metadata).some(([field, value]) => current[field] !== value);
+      const before = JSON.stringify(current);
       Object.assign(current, metadata);
-      if (changed) updatedCount += 1;
+
+      if (current.linkType === "repository" && repo.homepage?.trim()) {
+        current.url = repo.homepage.trim();
+        delete current.linkType;
+        delete current.pagesUrl;
+      } else if (current.linkType === "repository") {
+        current.pagesUrl = repo.has_pages ? pagesUrl : null;
+      }
+
+      if (JSON.stringify(current) !== before) updatedCount += 1;
       continue;
     }
 
@@ -100,7 +108,7 @@ async function runSync() {
       category: defaults.category,
       url: homepage || repositoryUrl,
       repositoryUrl,
-      ...(!homepage ? { linkType: "repository", pagesUrl } : {}),
+      ...(!homepage ? { linkType: "repository", pagesUrl: repo.has_pages ? pagesUrl : null } : {}),
       icon: defaults.icon,
       color: defaults.color,
       githubUpdatedAt: repo.updated_at,
