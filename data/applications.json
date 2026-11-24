@@ -218,16 +218,14 @@
     "name": "Smart Exam Practice",
     "description": "Smart Exam Practice project repository.",
     "category": "Education",
-    "url": "https://github.com/somnathsumbe/SmartExamPractice",
+    "url": "https://smart-exam-practice.vercel.app",
     "repositoryUrl": "https://github.com/somnathsumbe/SmartExamPractice",
-    "linkType": "repository",
     "icon": "bi-mortarboard",
     "color": "tint-blue",
     "githubUpdatedAt": "2026-09-30T11:02:19Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/SmartExamPractice/"
+    "fork": false
   },
   {
     "id": "interview-prep-studio",
@@ -250,16 +248,14 @@
     "name": "Gaav2Ghar",
     "description": "Gaav2Ghar project repository.",
     "category": "Business",
-    "url": "https://github.com/somnathsumbe/Gaav2Ghar",
+    "url": "https://gaav2-ghar.vercel.app",
     "repositoryUrl": "https://github.com/somnathsumbe/Gaav2Ghar",
-    "linkType": "repository",
     "icon": "bi-basket",
     "color": "tint-amber",
     "githubUpdatedAt": "2026-10-31T19:31:18Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/Gaav2Ghar/"
+    "fork": false
   },
   {
     "id": "akshar-mitra",
