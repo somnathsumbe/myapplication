@@ -6,7 +6,8 @@
     "category": "Personal",
     "url": "https://somnathsumbe.github.io/",
     "icon": "bi-person-badge",
-    "color": "tint-mint"
+    "color": "tint-mint",
+    "repositoryUrl": "https://github.com/somnathsumbe/somnathsumbe.github.io"
   },
   {
     "id": "personal-ledger",
@@ -15,7 +16,8 @@
     "category": "Finance",
     "url": "https://somnathsumbe.github.io/-PersonalLedger/",
     "icon": "bi-wallet2",
-    "color": "tint-blue"
+    "color": "tint-blue",
+    "repositoryUrl": "https://github.com/somnathsumbe/-PersonalLedger"
   },
   {
     "id": "astro",
@@ -24,7 +26,8 @@
     "category": "Utilities",
     "url": "https://somnathsumbe.github.io/Astro/",
     "icon": "bi-stars",
-    "color": "tint-blue"
+    "color": "tint-blue",
+    "repositoryUrl": "https://github.com/somnathsumbe/Astro"
   },
   {
     "id": "marathi-14-khadi",
@@ -33,7 +36,8 @@
     "category": "Education",
     "url": "https://somnathsumbe.github.io/Marathi14Khadi/",
     "icon": "bi-book",
-    "color": "tint-violet"
+    "color": "tint-violet",
+    "repositoryUrl": "https://github.com/somnathsumbe/Marathi14Khadi"
   },
   {
     "id": "shreedha-enterprises",
@@ -42,7 +46,8 @@
     "category": "Business",
     "url": "https://somnathsumbe.github.io/shreedhaenterprises/",
     "icon": "bi-building",
-    "color": "tint-amber"
+    "color": "tint-amber",
+    "repositoryUrl": "https://github.com/somnathsumbe/shreedhaenterprises"
   },
   {
     "id": "trench-coder",
@@ -51,7 +56,8 @@
     "category": "Utilities",
     "url": "https://somnathsumbe.github.io/trenchcoder/",
     "icon": "bi-code-slash",
-    "color": "tint-lilac"
+    "color": "tint-lilac",
+    "repositoryUrl": "https://github.com/somnathsumbe/trenchcoder"
   },
   {
     "id": "my-grocery-list",
@@ -60,7 +66,8 @@
     "category": "Productivity",
     "url": "https://somnathsumbe.github.io/MyGroceryList/",
     "icon": "bi-basket",
-    "color": "tint-sky"
+    "color": "tint-sky",
+    "repositoryUrl": "https://github.com/somnathsumbe/MyGroceryList"
   },
   {
     "id": "marathi-kids-stories",
@@ -69,7 +76,8 @@
     "category": "Education",
     "url": "https://somnathsumbe.github.io/MarathiKidsStories/",
     "icon": "bi-book-half",
-    "color": "tint-rose"
+    "color": "tint-rose",
+    "repositoryUrl": "https://github.com/somnathsumbe/MarathiKidsStories"
   },
   {
     "id": "chess-log",
@@ -78,7 +86,8 @@
     "category": "Productivity",
     "url": "https://somnathsumbe.github.io/ChessLog/",
     "icon": "bi-trophy",
-    "color": "tint-teal"
+    "color": "tint-teal",
+    "repositoryUrl": "https://github.com/somnathsumbe/ChessLog"
   },
   {
     "id": "interview-prep-app",
@@ -87,7 +96,8 @@
     "category": "Development",
     "url": "https://somnathsumbe.github.io/InterviewPrepApp/",
     "icon": "bi-person-workspace",
-    "color": "tint-mint"
+    "color": "tint-mint",
+    "repositoryUrl": "https://github.com/somnathsumbe/InterviewPrepApp"
   },
   {
     "id": "smart-revision-app",
@@ -96,7 +106,8 @@
     "category": "Education",
     "url": "https://somnathsumbe.github.io/smartrevisionapp/",
     "icon": "bi-mortarboard",
-    "color": "tint-blue"
+    "color": "tint-blue",
+    "repositoryUrl": "https://github.com/somnathsumbe/smartrevisionapp"
   },
   {
     "id": "astro-next-level",
@@ -105,7 +116,8 @@
     "category": "Utilities",
     "url": "https://somnathsumbe.github.io/AstroNextLevel/dashboard/",
     "icon": "bi-stars",
-    "color": "tint-violet"
+    "color": "tint-violet",
+    "repositoryUrl": "https://github.com/somnathsumbe/AstroNextLevel"
   },
   {
     "id": "next-medi-stores-2026",
@@ -114,6 +126,106 @@
     "category": "Business",
     "url": "https://somnathsumbe.github.io/NextMediStores2026/login",
     "icon": "bi-hospital",
+    "color": "tint-amber",
+    "repositoryUrl": "https://github.com/somnathsumbe/NextMediStores2026"
+  },
+  {
+    "id": "astron",
+    "name": "AstroN",
+    "description": "AstroN project repository.",
+    "category": "Utilities",
+    "url": "https://github.com/somnathsumbe/AstroN",
+    "repositoryUrl": "https://github.com/somnathsumbe/AstroN",
+    "linkType": "repository",
+    "icon": "bi-stars",
+    "color": "tint-violet"
+  },
+  {
+    "id": "dtracker",
+    "name": "DTracker",
+    "description": "DTracker project repository.",
+    "category": "Productivity",
+    "url": "https://github.com/somnathsumbe/dtracker",
+    "repositoryUrl": "https://github.com/somnathsumbe/dtracker",
+    "linkType": "repository",
+    "icon": "bi-window",
+    "color": "tint-sky"
+  },
+  {
+    "id": "smart-exam-practice",
+    "name": "Smart Exam Practice",
+    "description": "Smart Exam Practice project repository.",
+    "category": "Education",
+    "url": "https://github.com/somnathsumbe/SmartExamPractice",
+    "repositoryUrl": "https://github.com/somnathsumbe/SmartExamPractice",
+    "linkType": "repository",
+    "icon": "bi-mortarboard",
+    "color": "tint-blue"
+  },
+  {
+    "id": "interview-prep-studio",
+    "name": "Interview Prep Studio",
+    "description": "Interview Prep Studio project repository.",
+    "category": "Development",
+    "url": "https://github.com/somnathsumbe/InterviewPrepStudio",
+    "repositoryUrl": "https://github.com/somnathsumbe/InterviewPrepStudio",
+    "linkType": "repository",
+    "icon": "bi-person-workspace",
+    "color": "tint-mint"
+  },
+  {
+    "id": "gaav2ghar",
+    "name": "Gaav2Ghar",
+    "description": "Gaav2Ghar project repository.",
+    "category": "Business",
+    "url": "https://github.com/somnathsumbe/Gaav2Ghar",
+    "repositoryUrl": "https://github.com/somnathsumbe/Gaav2Ghar",
+    "linkType": "repository",
+    "icon": "bi-basket",
     "color": "tint-amber"
+  },
+  {
+    "id": "akshar-mitra",
+    "name": "AksharMitra",
+    "description": "AksharMitra project repository.",
+    "category": "Education",
+    "url": "https://github.com/somnathsumbe/AksharMitra",
+    "repositoryUrl": "https://github.com/somnathsumbe/AksharMitra",
+    "linkType": "repository",
+    "icon": "bi-book",
+    "color": "tint-violet"
+  },
+  {
+    "id": "aaicha-pharal",
+    "name": "आईचा फराळ",
+    "description": "आईचा फराळ project repository.",
+    "category": "Business",
+    "url": "https://github.com/somnathsumbe/aaicha-pharal",
+    "repositoryUrl": "https://github.com/somnathsumbe/aaicha-pharal",
+    "linkType": "repository",
+    "icon": "bi-basket",
+    "color": "tint-rose"
+  },
+  {
+    "id": "chakali-recipe-production-manager",
+    "name": "Chakali Recipe Production Manager",
+    "description": "Chakali Recipe Production Manager project repository.",
+    "category": "Business",
+    "url": "https://github.com/somnathsumbe/Chakali-Recipe-Production-Manager",
+    "repositoryUrl": "https://github.com/somnathsumbe/Chakali-Recipe-Production-Manager",
+    "linkType": "repository",
+    "icon": "bi-building",
+    "color": "tint-amber"
+  },
+  {
+    "id": "interest-calculator",
+    "name": "Interest Calculator",
+    "description": "Interest Calculator project repository.",
+    "category": "Finance",
+    "url": "https://github.com/somnathsumbe/Interest-Calculator",
+    "repositoryUrl": "https://github.com/somnathsumbe/Interest-Calculator",
+    "linkType": "repository",
+    "icon": "bi-wallet2",
+    "color": "tint-teal"
   }
 ]
