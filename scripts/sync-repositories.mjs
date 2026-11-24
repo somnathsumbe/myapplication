@@ -70,12 +70,14 @@ async function runSync() {
     const repositoryUrl = repo.html_url.replace(/\.git$/, "");
     const key = repositoryUrl.toLowerCase();
     const current = byRepository.get(key);
+    const pagesUrl = `https://${owner}.github.io/${repo.name}/`;
     const metadata = {
       repositoryUrl,
       githubUpdatedAt: repo.updated_at,
       defaultBranch: repo.default_branch,
       stars: repo.stargazers_count,
       fork: repo.fork,
+      ...(current?.linkType === "repository" && !current.pagesUrl ? { pagesUrl } : {}),
     };
 
     if (current) {
@@ -98,7 +100,7 @@ async function runSync() {
       category: defaults.category,
       url: homepage || repositoryUrl,
       repositoryUrl,
-      ...(!homepage ? { linkType: "repository" } : {}),
+      ...(!homepage ? { linkType: "repository", pagesUrl } : {}),
       icon: defaults.icon,
       color: defaults.color,
       githubUpdatedAt: repo.updated_at,
