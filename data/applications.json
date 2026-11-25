@@ -1,21 +1,5 @@
 [
   {
-    "id": "ai-master-class",
-    "name": "AI Master Class",
-    "description": "Learn and explore AI tools, lessons and practical projects.",
-    "category": "Education",
-    "url": "https://somnathsumbe.github.io/ai-master-class/",
-    "repositoryUrl": "https://github.com/somnathsumbe/ai-master-class",
-    "icon": "bi-stars",
-    "color": "tint-violet",
-    "githubUpdatedAt": "2026-11-25T10:54:50Z",
-    "defaultBranch": "main",
-    "stars": 0,
-    "fork": false,
-    "websiteStatus": "available",
-    "websiteVerifiedAt": "2026-11-25T11:35:59.750Z"
-  },
-  {
     "id": "somnath-sumbe",
     "name": "Somnath Sumbe",
     "description": "Personal website and portfolio.",
