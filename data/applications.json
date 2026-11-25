@@ -331,10 +331,26 @@
     "linkType": "repository",
     "icon": "bi-window",
     "color": "tint-mint",
-    "githubUpdatedAt": "2026-10-16T09:44:33Z",
+    "githubUpdatedAt": "2026-11-24T14:22:09Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
     "pagesUrl": "https://somnathsumbe.github.io/myapplication/"
+  },
+  {
+    "id": "ai-master-class",
+    "name": "ai-master-class",
+    "description": "GitHub repository for ai-master-class.",
+    "category": "Other",
+    "url": "https://github.com/somnathsumbe/ai-master-class",
+    "repositoryUrl": "https://github.com/somnathsumbe/ai-master-class",
+    "linkType": "repository",
+    "pagesUrl": null,
+    "icon": "bi-window",
+    "color": "tint-mint",
+    "githubUpdatedAt": "2026-11-25T01:28:09Z",
+    "defaultBranch": "main",
+    "stars": 0,
+    "fork": false
   }
 ]
