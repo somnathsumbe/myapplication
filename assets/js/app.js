@@ -54,8 +54,14 @@
     status.classList.toggle("is-error", isError);
   }
 
-  function renderApplications(applications) {
-    $("#appsGrid").innerHTML = applications.map((app) => {
+  function renderApplications(applications, searchTerm = "") {
+    const normalizedQuery = String(searchTerm).trim().toLocaleLowerCase();
+    const filteredApplications = applications.filter((app) => {
+      if (!normalizedQuery) return true;
+      const values = [app.name, app.id, app.description, app.category, app.repositoryUrl, app.url, app.pagesUrl, app.defaultBranch];
+      return values.some((value) => String(value || "").toLocaleLowerCase().includes(normalizedQuery));
+    });
+    $("#appsGrid").innerHTML = filteredApplications.length ? filteredApplications.map((app) => {
       const appUrl = app.linkType === "repository" ? validUrl(app.pagesUrl) : validUrl(app.url);
       const repositoryUrl = validUrl(app.repositoryUrl) || (app.linkType === "repository" ? validUrl(app.url) : null);
       const primaryUrl = appUrl || repositoryUrl;
@@ -91,9 +97,9 @@
           ${copyAction}
         </div>
       </article>`;
-    }).join("");
+    }).join("") : '<div class="empty-search-state" role="status">No matching applications or repositories found.</div>';
     const count = $("#appCount");
-    if (count) count.textContent = `${applications.length} projects`;
+    if (count) count.textContent = normalizedQuery ? `${filteredApplications.length} of ${applications.length} projects` : `${applications.length} projects`;
   }
 
   async function copyLink(url) {
@@ -175,7 +181,8 @@
       if (!response.ok) throw new Error(`Application list request failed (${response.status}).`);
       const applications = await response.json();
       if (!Array.isArray(applications)) throw new Error("Application list has an invalid format.");
-      renderApplications(applications);
+      window.applicationHubData = applications;
+      renderApplications(applications, $("#globalSearch")?.value || "");
     } catch (error) {
       showStatus("Applications could not be loaded. Refresh the page to try again.", true);
       console.error("Unable to load applications.", error);
@@ -202,6 +209,11 @@
       updatedPreferences.darkMode = darkMode;
       writePreferences(updatedPreferences);
       themeToggle.innerHTML = svgIcon(darkMode ? "bi-sun" : "bi-moon-stars");
+    });
+
+    const globalSearch = $("#globalSearch");
+    globalSearch?.addEventListener("input", () => {
+      if (Array.isArray(window.applicationHubData)) renderApplications(window.applicationHubData, globalSearch.value);
     });
 
     $("#appsGrid").addEventListener("click", async (event) => {
