@@ -76,7 +76,7 @@ async function findVerifiedWebsite(repo, current) {
 
 const categoryDefaults = [
   { match: /finance|ledger|calculator|payment|money/i, category: "Finance", icon: "bi-wallet2", color: "tint-teal" },
-  { match: /education|exam|learn|study|story|school|revision/i, category: "Education", icon: "bi-book", color: "tint-violet" },
+  { match: /ai[-_ ]?master[-_ ]?class|education|exam|learn|study|story|school|revision/i, category: "Education", icon: "bi-book", color: "tint-violet" },
   { match: /business|store|shop|food|ghar|pharal|recipe/i, category: "Business", icon: "bi-building", color: "tint-amber" },
   { match: /interview|code|dev|coder|software/i, category: "Development", icon: "bi-code-slash", color: "tint-blue" },
   { match: /task|tracker|grocery|chess|productivity/i, category: "Productivity", icon: "bi-grid", color: "tint-sky" },
@@ -85,6 +85,11 @@ const categoryDefaults = [
 function defaultsFor(name) {
   return categoryDefaults.find((item) => item.match.test(name))
     ?? { category: "Other", icon: "bi-window", color: "tint-mint" };
+}
+
+function displayNameFor(name) {
+  if (/^ai[-_ ]?master[-_ ]?class$/i.test(name)) return "AI Master Class";
+  return name.replace(/[-_]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 function toId(name) {
@@ -151,7 +156,7 @@ async function runSync() {
 
     existing.push({
       id,
-      name: repo.name,
+      name: displayNameFor(repo.name),
       description: repo.description || `GitHub repository for ${repo.name}.`,
       category: defaults.category,
       ...metadata,
