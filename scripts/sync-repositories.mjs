@@ -36,6 +36,44 @@ async function fetchOwnedPublicRepositories() {
   return repositories;
 }
 
+async function verifyWebsiteUrl(candidate) {
+  if (!candidate) return null;
+  let url;
+  try {
+    url = new URL(candidate);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+  } catch {
+    return null;
+  }
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      signal: AbortSignal.timeout(12000),
+      headers: { "User-Agent": "myapplication-repository-link-check/1.0" },
+    });
+    return response.ok ? candidate : null;
+  } catch {
+    return null;
+  }
+}
+
+async function findVerifiedWebsite(repo, current) {
+  const repositoryUrl = repo.html_url.replace(/\.git$/, "");
+  const candidates = [
+    repo.homepage?.trim(),
+    current && current.linkType !== "repository" && current.url !== repositoryUrl ? current.url : null,
+    repo.has_pages ? `https://${owner}.github.io/${repo.name}/` : null,
+  ].filter((value, index, all) => value && all.indexOf(value) === index);
+
+  for (const candidate of candidates) {
+    const verified = await verifyWebsiteUrl(candidate);
+    if (verified) return verified;
+  }
+  return null;
+}
+
 const categoryDefaults = [
   { match: /finance|ledger|calculator|payment|money/i, category: "Finance", icon: "bi-wallet2", color: "tint-teal" },
   { match: /education|exam|learn|study|story|school|revision/i, category: "Education", icon: "bi-book", color: "tint-violet" },
@@ -66,31 +104,42 @@ async function runSync() {
   let addedCount = 0;
   let updatedCount = 0;
 
+  let verifiedWebsiteCount = 0;
+  let unavailableWebsiteCount = 0;
+
   for (const repo of repositories) {
     const repositoryUrl = repo.html_url.replace(/\.git$/, "");
     const key = repositoryUrl.toLowerCase();
     const current = byRepository.get(key);
-    const pagesUrl = `https://${owner}.github.io/${repo.name}/`;
+    const websiteUrl = await findVerifiedWebsite(repo, current);
+    const verifiedAt = new Date().toISOString();
     const metadata = {
       repositoryUrl,
       githubUpdatedAt: repo.updated_at,
       defaultBranch: repo.default_branch,
       stars: repo.stargazers_count,
       fork: repo.fork,
+      websiteStatus: websiteUrl ? "available" : "unavailable",
+      websiteVerifiedAt: verifiedAt,
     };
+
+    if (websiteUrl) {
+      metadata.url = websiteUrl;
+      metadata.linkType = undefined;
+      metadata.pagesUrl = undefined;
+      verifiedWebsiteCount += 1;
+    } else {
+      metadata.url = repositoryUrl;
+      metadata.linkType = "repository";
+      metadata.pagesUrl = null;
+      unavailableWebsiteCount += 1;
+    }
 
     if (current) {
       const before = JSON.stringify(current);
       Object.assign(current, metadata);
-
-      if (current.linkType === "repository" && repo.homepage?.trim()) {
-        current.url = repo.homepage.trim();
-        delete current.linkType;
-        delete current.pagesUrl;
-      } else if (current.linkType === "repository") {
-        current.pagesUrl = repo.has_pages ? pagesUrl : null;
-      }
-
+      if (current.linkType === undefined) delete current.linkType;
+      if (current.pagesUrl === undefined) delete current.pagesUrl;
       if (JSON.stringify(current) !== before) updatedCount += 1;
       continue;
     }
@@ -99,22 +148,15 @@ async function runSync() {
     let id = toId(repo.name) || `repository-${repo.id}`;
     if (seenIds.has(id)) id = `${id}-${repo.id}`;
     seenIds.add(id);
-    const homepage = repo.homepage?.trim();
 
     existing.push({
       id,
       name: repo.name,
       description: repo.description || `GitHub repository for ${repo.name}.`,
       category: defaults.category,
-      url: homepage || repositoryUrl,
-      repositoryUrl,
-      ...(!homepage ? { linkType: "repository", pagesUrl: repo.has_pages ? pagesUrl : null } : {}),
+      ...metadata,
       icon: defaults.icon,
       color: defaults.color,
-      githubUpdatedAt: repo.updated_at,
-      defaultBranch: repo.default_branch,
-      stars: repo.stargazers_count,
-      fork: repo.fork,
     });
     addedCount += 1;
   }
@@ -131,6 +173,8 @@ async function runSync() {
     updatedCount,
     totalRepositories: repositories.length,
     dashboardEntries: existing.length,
+    verifiedWebsiteCount,
+    unavailableWebsiteCount,
     error: null,
   };
   await writeStatus(status);
