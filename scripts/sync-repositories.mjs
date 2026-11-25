@@ -99,13 +99,26 @@ function toId(name) {
 
 async function runSync() {
   if (!token) throw new Error("GITHUB_TOKEN is required.");
-  const existing = JSON.parse(await readFile(applicationsPath, "utf8"));
+  let existing = JSON.parse(await readFile(applicationsPath, "utf8"));
   if (!Array.isArray(existing)) throw new TypeError("data/applications.json must contain a JSON array.");
 
   const byRepository = new Map(existing.filter((app) => app.repositoryUrl)
     .map((app) => [app.repositoryUrl.replace(/\.git$/, "").toLowerCase(), app]));
   const seenIds = new Set(existing.map((app) => app.id));
   const repositories = await fetchOwnedPublicRepositories();
+
+  // Remove stale dashboard cards for repositories that no longer exist as public
+  // repositories owned by this account. Keep manually-managed cards without repositoryUrl.
+  const activeRepositoryUrls = new Set(repositories.map((repo) =>
+    repo.html_url.replace(/\\.git$/, "").toLowerCase()
+  ));
+  const previousEntryCount = existing.length;
+  existing = existing.filter((app) => {
+    if (!app.repositoryUrl) return true;
+    return activeRepositoryUrls.has(app.repositoryUrl.replace(/\\.git$/, "").toLowerCase());
+  });
+  const removedCount = previousEntryCount - existing.length;
+
   let addedCount = 0;
   let updatedCount = 0;
 
@@ -176,6 +189,7 @@ async function runSync() {
     lastSuccessfulRunAt: completedAt,
     addedCount,
     updatedCount,
+    removedCount,
     totalRepositories: repositories.length,
     dashboardEntries: existing.length,
     verifiedWebsiteCount,
@@ -183,7 +197,7 @@ async function runSync() {
     error: null,
   };
   await writeStatus(status);
-  console.log(`Sync successful: ${repositories.length} public repositories; ${addedCount} added; ${updatedCount} updated.`);
+  console.log(`Sync successful: ${repositories.length} public repositories; ${addedCount} added; ${updatedCount} updated; ${removedCount} removed.`);
 }
 
 try {
