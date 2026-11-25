@@ -2,8 +2,8 @@ name: Sync GitHub repositories
 
 on:
   schedule:
-    # Daily at 02:30 UTC (08:00 IST)
-    - cron: "30 2 * * *"
+    # Every 15 minutes: discover new repositories and remove deleted ones automatically.
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
