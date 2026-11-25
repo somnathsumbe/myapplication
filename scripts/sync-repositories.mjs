@@ -110,12 +110,12 @@ async function runSync() {
   // Remove stale dashboard cards for repositories that no longer exist as public
   // repositories owned by this account. Keep manually-managed cards without repositoryUrl.
   const activeRepositoryUrls = new Set(repositories.map((repo) =>
-    repo.html_url.replace(/\\.git$/, "").toLowerCase()
+    repo.html_url.replace(/\.git$/, "").toLowerCase()
   ));
   const previousEntryCount = existing.length;
   existing = existing.filter((app) => {
     if (!app.repositoryUrl) return true;
-    return activeRepositoryUrls.has(app.repositoryUrl.replace(/\\.git$/, "").toLowerCase());
+    return activeRepositoryUrls.has(app.repositoryUrl.replace(/\.git$/, "").toLowerCase());
   });
   const removedCount = previousEntryCount - existing.length;
 
