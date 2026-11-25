@@ -1,12 +1,14 @@
 {
   "status": "success",
   "owner": "somnathsumbe",
-  "startedAt": "2026-11-25T03:48:28.893Z",
-  "completedAt": "2026-11-25T03:48:29.697Z",
-  "lastSuccessfulRunAt": "2026-11-25T03:48:29.697Z",
+  "startedAt": "2026-11-25T03:58:31.125Z",
+  "completedAt": "2026-11-25T03:58:34.935Z",
+  "lastSuccessfulRunAt": "2026-11-25T03:58:34.935Z",
   "addedCount": 0,
-  "updatedCount": 1,
+  "updatedCount": 24,
   "totalRepositories": 24,
   "dashboardEntries": 24,
+  "verifiedWebsiteCount": 23,
+  "unavailableWebsiteCount": 1,
   "error": null
 }

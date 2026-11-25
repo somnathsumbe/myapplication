@@ -11,7 +11,9 @@
     "githubUpdatedAt": "2026-07-27T10:18:05Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.934Z"
   },
   {
     "id": "personal-ledger",
@@ -25,7 +27,9 @@
     "githubUpdatedAt": "2026-10-15T13:47:03Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.107Z"
   },
   {
     "id": "astro",
@@ -39,7 +43,9 @@
     "githubUpdatedAt": "2026-09-02T14:22:10Z",
     "defaultBranch": "master",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.838Z"
   },
   {
     "id": "marathi-14-khadi",
@@ -53,7 +59,9 @@
     "githubUpdatedAt": "2026-09-04T17:39:09Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.731Z"
   },
   {
     "id": "shreedha-enterprises",
@@ -67,7 +75,9 @@
     "githubUpdatedAt": "2026-09-06T17:51:29Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.603Z"
   },
   {
     "id": "trench-coder",
@@ -81,7 +91,9 @@
     "githubUpdatedAt": "2026-09-07T07:46:39Z",
     "defaultBranch": "master",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.492Z"
   },
   {
     "id": "my-grocery-list",
@@ -95,7 +107,9 @@
     "githubUpdatedAt": "2026-09-17T14:53:13Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.263Z"
   },
   {
     "id": "marathi-kids-stories",
@@ -109,7 +123,9 @@
     "githubUpdatedAt": "2026-09-23T16:09:44Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.080Z"
   },
   {
     "id": "chess-log",
@@ -123,7 +139,9 @@
     "githubUpdatedAt": "2026-10-08T07:36:46Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.718Z"
   },
   {
     "id": "interview-prep-app",
@@ -137,7 +155,9 @@
     "githubUpdatedAt": "2026-10-17T09:49:09Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.990Z"
   },
   {
     "id": "smart-revision-app",
@@ -151,7 +171,9 @@
     "githubUpdatedAt": "2026-10-12T13:15:15Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.611Z"
   },
   {
     "id": "astro-next-level",
@@ -165,83 +187,89 @@
     "githubUpdatedAt": "2026-10-13T08:36:10Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.502Z"
   },
   {
     "id": "next-medi-stores-2026",
     "name": "Next Medi Stores 2026",
     "description": "Open Next Medi Stores 2026.",
     "category": "Business",
-    "url": "https://somnathsumbe.github.io/NextMediStores2026/login",
+    "url": "https://somnathsumbe.github.io/NextMediStores2026/",
     "icon": "bi-hospital",
     "color": "tint-amber",
     "repositoryUrl": "https://github.com/somnathsumbe/NextMediStores2026",
     "githubUpdatedAt": "2026-10-13T09:16:24Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.391Z"
   },
   {
     "id": "astron",
     "name": "AstroN",
     "description": "AstroN project repository.",
     "category": "Utilities",
-    "url": "https://github.com/somnathsumbe/AstroN",
+    "url": "https://somnathsumbe.github.io/AstroN/",
     "repositoryUrl": "https://github.com/somnathsumbe/AstroN",
-    "linkType": "repository",
     "icon": "bi-stars",
     "color": "tint-violet",
     "githubUpdatedAt": "2026-09-10T11:31:37Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/AstroN/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:34.379Z"
   },
   {
     "id": "dtracker",
     "name": "DTracker",
     "description": "DTracker project repository.",
     "category": "Productivity",
-    "url": "https://github.com/somnathsumbe/dtracker",
+    "url": "https://somnathsumbe.github.io/dtracker/",
     "repositoryUrl": "https://github.com/somnathsumbe/dtracker",
-    "linkType": "repository",
     "icon": "bi-window",
     "color": "tint-sky",
     "githubUpdatedAt": "2026-09-24T08:42:26Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/dtracker/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.967Z"
   },
   {
     "id": "smart-exam-practice",
     "name": "Smart Exam Practice",
     "description": "Smart Exam Practice project repository.",
     "category": "Education",
-    "url": "https://smart-exam-practice.vercel.app",
+    "url": "https://somnathsumbe.github.io/SmartExamPractice/",
     "repositoryUrl": "https://github.com/somnathsumbe/SmartExamPractice",
     "icon": "bi-mortarboard",
     "color": "tint-blue",
     "githubUpdatedAt": "2026-09-30T11:02:19Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:33.857Z"
   },
   {
     "id": "interview-prep-studio",
     "name": "Interview Prep Studio",
     "description": "Interview Prep Studio project repository.",
     "category": "Development",
-    "url": "https://github.com/somnathsumbe/InterviewPrepStudio",
+    "url": "https://somnathsumbe.github.io/InterviewPrepStudio/",
     "repositoryUrl": "https://github.com/somnathsumbe/InterviewPrepStudio",
-    "linkType": "repository",
     "icon": "bi-person-workspace",
     "color": "tint-mint",
     "githubUpdatedAt": "2026-10-17T13:50:07Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/InterviewPrepStudio/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.884Z"
   },
   {
     "id": "gaav2ghar",
@@ -255,23 +283,25 @@
     "githubUpdatedAt": "2026-10-31T19:31:18Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.661Z"
   },
   {
     "id": "akshar-mitra",
     "name": "AksharMitra",
     "description": "AksharMitra project repository.",
     "category": "Education",
-    "url": "https://github.com/somnathsumbe/AksharMitra",
+    "url": "https://somnathsumbe.github.io/AksharMitra/",
     "repositoryUrl": "https://github.com/somnathsumbe/AksharMitra",
-    "linkType": "repository",
     "icon": "bi-book",
     "color": "tint-violet",
     "githubUpdatedAt": "2026-10-29T06:51:55Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/AksharMitra/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.768Z"
   },
   {
     "id": "aaicha-pharal",
@@ -287,70 +317,72 @@
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/aaicha-pharal/"
+    "pagesUrl": null,
+    "websiteStatus": "unavailable",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.319Z"
   },
   {
     "id": "chakali-recipe-production-manager",
     "name": "Chakali Recipe Production Manager",
     "description": "Chakali Recipe Production Manager project repository.",
     "category": "Business",
-    "url": "https://github.com/somnathsumbe/Chakali-Recipe-Production-Manager",
+    "url": "https://somnathsumbe.github.io/Chakali-Recipe-Production-Manager/",
     "repositoryUrl": "https://github.com/somnathsumbe/Chakali-Recipe-Production-Manager",
-    "linkType": "repository",
     "icon": "bi-building",
     "color": "tint-amber",
     "githubUpdatedAt": "2026-11-13T10:22:20Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/Chakali-Recipe-Production-Manager/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.224Z"
   },
   {
     "id": "interest-calculator",
     "name": "Interest Calculator",
     "description": "Interest Calculator project repository.",
     "category": "Finance",
-    "url": "https://github.com/somnathsumbe/Interest-Calculator",
+    "url": "https://somnathsumbe.github.io/Interest-Calculator/",
     "repositoryUrl": "https://github.com/somnathsumbe/Interest-Calculator",
-    "linkType": "repository",
     "icon": "bi-wallet2",
     "color": "tint-teal",
     "githubUpdatedAt": "2026-11-13T17:17:11Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/Interest-Calculator/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:32.105Z"
   },
   {
     "id": "myapplication",
     "name": "myapplication",
     "description": "GitHub repository for myapplication.",
     "category": "Other",
-    "url": "https://github.com/somnathsumbe/myapplication",
+    "url": "https://somnathsumbe.github.io/myapplication/",
     "repositoryUrl": "https://github.com/somnathsumbe/myapplication",
-    "linkType": "repository",
     "icon": "bi-window",
     "color": "tint-mint",
     "githubUpdatedAt": "2026-11-24T14:22:09Z",
     "defaultBranch": "main",
     "stars": 0,
     "fork": false,
-    "pagesUrl": "https://somnathsumbe.github.io/myapplication/"
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:31.999Z"
   },
   {
     "id": "ai-master-class",
     "name": "ai-master-class",
     "description": "GitHub repository for ai-master-class.",
     "category": "Other",
-    "url": "https://github.com/somnathsumbe/ai-master-class",
+    "url": "https://somnathsumbe.github.io/ai-master-class/",
     "repositoryUrl": "https://github.com/somnathsumbe/ai-master-class",
-    "linkType": "repository",
-    "pagesUrl": "https://somnathsumbe.github.io/ai-master-class/",
     "icon": "bi-window",
     "color": "tint-mint",
     "githubUpdatedAt": "2026-11-25T03:46:04Z",
     "defaultBranch": "main",
     "stars": 0,
-    "fork": false
+    "fork": false,
+    "websiteStatus": "available",
+    "websiteVerifiedAt": "2026-11-25T03:58:31.908Z"
   }
 ]
