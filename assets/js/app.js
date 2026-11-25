@@ -149,7 +149,7 @@
       if (status.status === "success") {
         badge.classList.add("is-success");
         badge.textContent = "Sync successful";
-        message.textContent = `Last run completed at ${formatSyncDate(status.completedAt)}. ${status.addedCount || 0} added and ${status.updatedCount || 0} updated.`;
+        message.textContent = `Last run completed at ${formatSyncDate(status.completedAt)}. ${status.addedCount || 0} added, ${status.updatedCount || 0} updated, ${status.verifiedWebsiteCount ?? "—"} website links verified, and ${status.unavailableWebsiteCount ?? "—"} without a verified website link.`;
       } else if (status.status === "failed") {
         badge.classList.add("is-error");
         badge.textContent = "Last sync failed";
