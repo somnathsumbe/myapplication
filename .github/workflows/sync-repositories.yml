@@ -42,7 +42,7 @@ jobs:
             echo "No dashboard data or sync status changes."
           else
             git config user.name "github-actions[bot]"
-            git config user.email "41898282+users.noreply.github.com"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/applications.json data/repository-sync-status.json
             git commit -m "chore: update repository sync status"
             git push origin HEAD:main
