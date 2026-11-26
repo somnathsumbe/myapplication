@@ -386,5 +386,21 @@
     "pagesUrl": null,
     "icon": "bi-window",
     "color": "tint-mint"
+  },
+  {
+    "id": "aimasterclass",
+    "name": "AI Master Class",
+    "description": "GitHub repository for AIMasterclass.",
+    "category": "Education",
+    "repositoryUrl": "https://github.com/somnathsumbe/AIMasterclass",
+    "githubUpdatedAt": "2026-11-25T12:53:25Z",
+    "defaultBranch": "main",
+    "stars": 0,
+    "fork": false,
+    "websiteStatus": "available",
+    "url": "https://somnathsumbe.github.io/AIMasterclass/",
+    "websiteVerifiedAt": "2026-11-26T04:52:29.161Z",
+    "icon": "bi-book",
+    "color": "tint-violet"
   }
 ]
