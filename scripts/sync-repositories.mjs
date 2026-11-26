@@ -138,7 +138,6 @@ async function runSync() {
       stars: repo.stargazers_count,
       fork: repo.fork,
       websiteStatus: websiteUrl ? "available" : "unavailable",
-      websiteVerifiedAt: verifiedAt,
     };
 
     if (websiteUrl) {
@@ -154,11 +153,23 @@ async function runSync() {
     }
 
     if (current) {
-      const before = JSON.stringify(current);
-      Object.assign(current, metadata);
-      if (current.linkType === undefined) delete current.linkType;
-      if (current.pagesUrl === undefined) delete current.pagesUrl;
-      if (JSON.stringify(current) !== before) updatedCount += 1;
+      // Count only meaningful repository/link metadata changes. Do not rewrite
+      // websiteVerifiedAt on every run, otherwise every sync dirties all cards.
+      const websiteFieldsChanged =
+        current.url !== metadata.url ||
+        current.websiteStatus !== metadata.websiteStatus ||
+        (websiteUrl && ("linkType" in current || "pagesUrl" in current)) ||
+        (!websiteUrl && current.pagesUrl !== null);
+      const repositoryFieldsChanged = [
+        "repositoryUrl", "githubUpdatedAt", "defaultBranch", "stars", "fork"
+      ].some((key) => current[key] !== metadata[key]);
+
+      if (websiteFieldsChanged || repositoryFieldsChanged) {
+        Object.assign(current, metadata, { websiteVerifiedAt: verifiedAt });
+        if (current.linkType === undefined || websiteUrl) delete current.linkType;
+        if (current.pagesUrl === undefined || websiteUrl) delete current.pagesUrl;
+        updatedCount += 1;
+      }
       continue;
     }
 
