@@ -40,6 +40,21 @@ jobs:
         with:
           node-version: 22
 
+      - name: Validate sync script and dashboard JSON
+        run: |
+          node --check scripts/sync-repositories.mjs
+          node --input-type=module <<'NODE'
+          import { readFile } from "node:fs/promises";
+          const applications = JSON.parse(await readFile("data/applications.json", "utf8"));
+          JSON.parse(await readFile("data/repository-sync-status.json", "utf8"));
+          if (!Array.isArray(applications)) throw new Error("applications.json must be an array");
+          const ids = applications.map((app) => app.id);
+          const repositoryUrls = applications.filter((app) => app.repositoryUrl).map((app) => app.repositoryUrl.toLowerCase());
+          if (ids.some((id, index) => !id || ids.indexOf(id) !== index)) throw new Error("Application IDs must be present and unique");
+          if (repositoryUrls.some((url, index) => repositoryUrls.indexOf(url) !== index)) throw new Error("Repository URLs must be unique");
+          console.log(`Validated ${applications.length} dashboard entries.`);
+          NODE
+
       - name: Sync repositories and record status
         id: sync
         continue-on-error: true
