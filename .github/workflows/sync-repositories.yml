@@ -9,8 +9,8 @@ on:
       - "data/applications.json"
       - "data/repository-sync-status.json"
   schedule:
-    # Temporary test schedule: daily at 04:40 UTC (10:10 IST).
-    - cron: "40 4 * * *"
+    # Daily at 08:00 India Standard Time (02:30 UTC).
+    - cron: "30 2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,12 +28,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-
-      - name: Wait 3 minutes after a push
-        if: github.event_name == 'push'
-        run: |
-          echo "Push detected. Waiting 180 seconds before repository sync."
-          sleep 180
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
