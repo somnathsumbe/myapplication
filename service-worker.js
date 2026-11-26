@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "my-hub-v7";
+const CACHE_VERSION = "my-hub-v8";
 const APP_CACHE = `${CACHE_VERSION}-app`;
 const APP_SHELL = [
   "./",
@@ -40,6 +40,20 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
 
   if (url.pathname.endsWith("/data/repository-sync-status.json")) {
+    event.respondWith((async () => {
+      const cache = await caches.open(APP_CACHE);
+      try {
+        const response = await fetch(request, { cache: "no-store" });
+        if (response.ok) await cache.put(request, response.clone());
+        return response;
+      } catch {
+        return (await cache.match(request)) || Response.error();
+      }
+    })());
+    return;
+  }
+
+  if (url.pathname.endsWith("/data/applications.json")) {
     event.respondWith((async () => {
       const cache = await caches.open(APP_CACHE);
       try {
