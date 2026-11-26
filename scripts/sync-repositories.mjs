@@ -184,6 +184,7 @@ async function runSync() {
       description: repo.description || `GitHub repository for ${repo.name}.`,
       category: defaults.category,
       ...metadata,
+      websiteVerifiedAt: verifiedAt,
       icon: defaults.icon,
       color: defaults.color,
     });
